@@ -6,8 +6,11 @@ const download = require('./download/index')
 const list = require('./list/node/index')
 const play = require('./play/index')
 const user = require('./user/index')
+const { accessLogger,logger } = require('./logger/index')
 
 const app = new koa()
+
+app.use(accessLogger())
 
 app.use(async (ctx,next) => {
   const parsedUrl = url.parse(ctx.url);
@@ -52,4 +55,8 @@ app.use(
 
 app.listen(3000,() => {
   console.log('listen 3000')
+})
+
+app.on('error',(error) => {
+  logger.error(error)
 })
