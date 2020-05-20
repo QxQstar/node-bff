@@ -7,11 +7,12 @@ const list = require('./list/node/index')
 const play = require('./play/index')
 const user = require('./user/index')
 const { accessLogger,logger } = require('./logger/index')
+const onerror = require('koa-onerror');
 
 const app = new koa()
 
+onerror(app)
 app.use(accessLogger())
-
 app.use(async (ctx,next) => {
   const parsedUrl = url.parse(ctx.url);
   if (
