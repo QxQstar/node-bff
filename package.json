@@ -1,0 +1,32 @@
+{
+  "name": "bff",
+  "version": "1.0.0",
+  "description": "node BFF 层的实现",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "debug": "nodemon --inspect app.js",
+    "server": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "easy_sock": "^0.3.9",
+    "graphql": "^15.0.0",
+    "koa": "^2.11.0",
+    "koa-graphql": "^0.8.0",
+    "koa-mount": "^4.0.0",
+    "koa-static": "^5.0.0",
+    "mysql2": "^2.1.0",
+    "protocol-buffers": "^4.1.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "sequelize": "^5.21.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/register": "^7.9.0",
+    "babel-loader": "^8.1.0"
+  }
+}

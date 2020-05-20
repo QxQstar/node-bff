@@ -1,0 +1,18 @@
+type Query  {
+    comment(id:ID):[Comment]
+}
+
+type Comment {
+    id:Int,
+    avatar:String,
+    name:String,
+    isTop:Boolean,
+    content:String,
+    publishDate:String,
+    commentNum:Int,
+    praiseNum:Int
+}
+
+type Mutation {
+    praise(id:ID ):Int
+}
