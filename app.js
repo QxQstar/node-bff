@@ -5,12 +5,11 @@ const detail = require('./detail/index')
 const download = require('./download/index')
 const list = require('./list/node/index')
 const play = require('./play/index')
-const user = require('./user/index')
+// const user = require('./user/index')
 const { accessLogger,logger } = require('./logger/index')
 const onerror = require('koa-onerror');
 
 const app = new koa()
-
 onerror(app)
 app.use(accessLogger())
 app.use(async (ctx,next) => {
@@ -45,14 +44,14 @@ app.use(
 app.use(
   mount('/detail',detail)
 )
-app.use(
-  mount('/user',user)
-)
 // app.use(
-//   mount('/',(ctx) => {
-//     ctx.redirect('/list/')
-//   })
+//   mount('/user',user)
 // )
+app.use(
+  mount('/',(ctx) => {
+    ctx.redirect('/list/')
+  })
+)
 
 app.listen(3000,() => {
   console.log('listen 3000')

@@ -38,7 +38,7 @@ if(cluster.isMaster) {
   require( path.join(__dirname + '/app.js') )
   process.on('uncaughtException',(err) => {
     // 在这里可以将错误信息保存到日志中
-    progress.exit(1)
+    process.exit(1)
   })
 
   process.on('message',(msg) => {

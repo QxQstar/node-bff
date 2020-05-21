@@ -2,11 +2,12 @@
   "name": "bff",
   "version": "1.0.0",
   "description": "node BFF 层的实现",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "dev": "nodemon app.js",
     "debug": "nodemon --inspect app.js",
-    "server": "node server.js"
+    "server": "node server.js",
+    "start": "pm2 start ecosystem.config.js --env production"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +30,7 @@
     "@babel/core": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
     "@babel/register": "^7.9.0",
-    "babel-loader": "^8.1.0"
+    "babel-loader": "^8.1.0",
+    "pm2": "^4.4.0"
   }
 }

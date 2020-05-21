@@ -9,15 +9,11 @@ app.use(
 )
 
 const  buffer = fs.readFileSync(__dirname + '/source/index.htm')
-const arr = []
 app.use(
   mount('/',async (ctx) => {
     ctx.status = 200
     ctx.type = 'html'
-    const html = fs.readFileSync(__dirname + '/source/index.htm','utf-8')
-    ctx.body = html
-
-    // arr.push(html)
+    ctx.body = buffer
   })
 )
 // app.listen(3000)
